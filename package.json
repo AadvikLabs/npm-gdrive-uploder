@@ -1,6 +1,6 @@
 {
   "name": "@aadvik-teklabs/gdrive-uploader",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A comprehensive Google Drive file upload and management library for Node.js, NestJS, React, and Next.js applications",
   "author": "",
   "license": "MIT",

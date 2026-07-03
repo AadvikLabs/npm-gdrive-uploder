@@ -1,25 +1,25 @@
-# @aadviklabs/gdrive-uploader
+﻿# @aadvik-teklabs/gdrive-uploader
 
 A comprehensive, production-ready Google Drive file upload and management library for **Node.js**, **NestJS**, **React**, and **Next.js** applications.
 
 ## Features
 
-✨ **Easy to Use** - Simple API with TypeScript support
-📦 **Multi-Platform** - Works in Node.js backend, React, and Next.js
-🌐 **Browser Support** - Client-side Google Drive integration with OAuth2 PKCE
-🔒 **Secure** - OAuth2 authentication (server-side with refresh tokens, client-side with PKCE)
-📁 **Folder Management** - Create, organize, and manage folders
-🔍 **Search & List** - Search files and list folder contents
-� **React Hooks** - Pre-built hooks for easy React integration
-🧩 **NestJS Module** - Injectable service for NestJS applications
-🔗 **Public/Private Files** - Control file visibility
-⚡ **TypeScript First** - Written in TypeScript with full type definitions
-🎯 **Production Ready** - Battle-tested in production environments
+âœ¨ **Easy to Use** - Simple API with TypeScript support
+ðŸ“¦ **Multi-Platform** - Works in Node.js backend, React, and Next.js
+ðŸŒ **Browser Support** - Client-side Google Drive integration with OAuth2 PKCE
+ðŸ”’ **Secure** - OAuth2 authentication (server-side with refresh tokens, client-side with PKCE)
+ðŸ“ **Folder Management** - Create, organize, and manage folders
+ðŸ” **Search & List** - Search files and list folder contents
+ï¿½ **React Hooks** - Pre-built hooks for easy React integration
+ðŸ§© **NestJS Module** - Injectable service for NestJS applications
+ðŸ”— **Public/Private Files** - Control file visibility
+âš¡ **TypeScript First** - Written in TypeScript with full type definitions
+ðŸŽ¯ **Production Ready** - Battle-tested in production environments
 
 ## Installation
 
 ```bash
-npm install @aadviklabs/gdrive-uploader
+npm install @aadvik-teklabs/gdrive-uploader
 ```
 
 For React/Next.js projects, also install peer dependencies:
@@ -46,7 +46,7 @@ npm install react react-dom
 ### Quick Start
 
 ```typescript
-import { GoogleDriveStorage } from '@aadviklabs/gdrive-uploader';
+import { GoogleDriveStorage } from '@aadvik-teklabs/gdrive-uploader';
 
 const driveStorage = new GoogleDriveStorage({
   clientId: process.env.GOOGLE_CLIENT_ID,
@@ -93,7 +93,7 @@ const folderId = await driveStorage.createFolder('My Folder');
 Wrap your app with `GoogleDriveProvider`:
 
 ```tsx
-import { GoogleDriveProvider } from '@aadviklabs/gdrive-uploader/react';
+import { GoogleDriveProvider } from '@aadvik-teklabs/gdrive-uploader/react';
 
 function App() {
   return (
@@ -116,7 +116,7 @@ function App() {
 ### 2. Use Authentication Hook
 
 ```tsx
-import { useGoogleAuth } from '@aadviklabs/gdrive-uploader/react';
+import { useGoogleAuth } from '@aadvik-teklabs/gdrive-uploader/react';
 
 function AuthButton() {
   const { isAuthenticated, userEmail, signIn, signOut } = useGoogleAuth();
@@ -137,7 +137,7 @@ function AuthButton() {
 ### 3. Upload Files
 
 ```tsx
-import { FileUploader } from '@aadviklabs/gdrive-uploader/react';
+import { FileUploader } from '@aadvik-teklabs/gdrive-uploader/react';
 
 function UploadPage() {
   return (
@@ -158,7 +158,7 @@ function UploadPage() {
 ### 4. List and Manage Files
 
 ```tsx
-import { useFileList, useFileDelete } from '@aadviklabs/gdrive-uploader/react';
+import { useFileList, useFileDelete } from '@aadvik-teklabs/gdrive-uploader/react';
 
 function FileList() {
   const { files, isLoading, loadFiles, refresh } = useFileList();
@@ -203,7 +203,7 @@ function FileList() {
 // app/layout.tsx
 'use client';
 
-import { GoogleDriveProvider } from '@aadviklabs/gdrive-uploader/react';
+import { GoogleDriveProvider } from '@aadvik-teklabs/gdrive-uploader/react';
 
 export default function RootLayout({ children }) {
   return (
@@ -231,7 +231,7 @@ export default function RootLayout({ children }) {
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useGoogleDriveContext } from '@aadviklabs/gdrive-uploader/react';
+import { useGoogleDriveContext } from '@aadvik-teklabs/gdrive-uploader/react';
 
 export default function CallbackPage() {
   const router = useRouter();
@@ -255,7 +255,7 @@ Create API routes for server-side operations:
 
 ```typescript
 // pages/api/drive/upload.ts
-import { GoogleDriveStorage } from '@aadviklabs/gdrive-uploader';
+import { GoogleDriveStorage } from '@aadvik-teklabs/gdrive-uploader';
 
 export default async function handler(req, res) {
   const drive = new GoogleDriveStorage({
@@ -276,7 +276,7 @@ export default async function handler(req, res) {
 For vanilla JavaScript or other frameworks:
 
 ```typescript
-import { GoogleDriveBrowser } from '@aadviklabs/gdrive-uploader/browser';
+import { GoogleDriveBrowser } from '@aadvik-teklabs/gdrive-uploader/browser';
 
 const drive = new GoogleDriveBrowser({
   clientId: 'YOUR_CLIENT_ID',
@@ -303,7 +303,7 @@ console.log('Uploaded:', result.fileId);
 ### 1. Import Module
 
 ```typescript
-import { GoogleDriveModule } from '@aadviklabs/gdrive-uploader';
+import { GoogleDriveModule } from '@aadvik-teklabs/gdrive-uploader';
 
 @Module({
   imports: [
@@ -323,7 +323,7 @@ export class AppModule {}
 ### 2. Inject Service
 
 ```typescript
-import { GoogleDriveService } from '@aadviklabs/gdrive-uploader';
+import { GoogleDriveService } from '@aadvik-teklabs/gdrive-uploader';
 
 @Injectable()
 export class FileService {
@@ -354,7 +354,7 @@ export class FileService {
 
 Use the [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/):
 
-1. Click settings (⚙️) and check "Use your own OAuth credentials"
+1. Click settings (âš™ï¸) and check "Use your own OAuth credentials"
 2. Enter your Client ID and Client Secret
 3. Select scopes: `https://www.googleapis.com/auth/drive.file`
 4. Click "Authorize APIs"
@@ -371,7 +371,7 @@ Use the [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/):
 4. Add authorized redirect URIs:
    - `http://localhost:3000/auth/callback` (development)
    - `https://yourdomain.com/auth/callback` (production)
-5. Copy your **Client ID** (⚠️ **DO NOT** use Client Secret in frontend!)
+5. Copy your **Client ID** (âš ï¸ **DO NOT** use Client Secret in frontend!)
 
 ### Environment Variables
 
@@ -393,7 +393,7 @@ NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000/auth/callback
 
 ## Security Best Practices
 
-### ✅ DO
+### âœ… DO
 
 - **Backend**: Use Client Secret and Refresh Token (server-side only)
 - **Frontend**: Use OAuth2 PKCE flow (no client secret required)
@@ -406,7 +406,7 @@ NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000/auth/callback
 - Use HTTPS in production
 - Implement rate limiting on API routes
 
-### ❌ DON'T
+### âŒ DON'T
 
 - **Never** expose Client Secret in frontend code
 - **Never** commit credentials to version control
@@ -418,28 +418,28 @@ NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000/auth/callback
 
 #### Option 1: Client-Side Only (Simple)
 
-- Use `@aadviklabs/gdrive-uploader/browser` or `/react`
+- Use `@aadvik-teklabs/gdrive-uploader/browser` or `/react`
 - User authenticates with their own Google account
 - Files are uploaded directly from browser to Google Drive
-- ✅ Simple, no backend needed
-- ❌ User must sign in with Google
-- ❌ Limited control over file organization
+- âœ… Simple, no backend needed
+- âŒ User must sign in with Google
+- âŒ Limited control over file organization
 
 #### Option 2: Server-Side Proxy (Recommended for Production)
 
 - Frontend sends files to your API
 - Backend uses service account or OAuth to upload to Drive
-- ✅ Full control over file organization
-- ✅ Can implement additional validation/processing
-- ✅ Users don't need Google accounts
-- ❌ Requires backend infrastructure
+- âœ… Full control over file organization
+- âœ… Can implement additional validation/processing
+- âœ… Users don't need Google accounts
+- âŒ Requires backend infrastructure
 
 #### Option 3: Hybrid (Best of Both)
 
 - Use client-side for user-specific files
 - Use server-side for shared/organizational files
-- ✅ Maximum flexibility
-- ❌ More complex setup
+- âœ… Maximum flexibility
+- âŒ More complex setup
 
 ---
 
@@ -540,7 +540,7 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## License
 
-MIT © Aadvik Labs
+MIT Â© Aadvik Labs
 
 ## Support
 
@@ -551,4 +551,4 @@ For issues and questions:
 
 ---
 
-**Made with ❤️ by Aadvik Labs**
+**Made with â¤ï¸ by Aadvik Labs**
