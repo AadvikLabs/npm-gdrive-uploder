@@ -1,0 +1,21 @@
+import { PKCEParams, OAuth2TokenResponse } from './types';
+export declare function generatePKCEParams(): Promise<PKCEParams>;
+export declare function buildAuthorizationUrl(clientId: string, redirectUri: string, codeChallenge: string, state: string, scopes?: string[]): string;
+export declare function exchangeCodeForToken(code: string, codeVerifier: string, clientId: string, redirectUri: string): Promise<OAuth2TokenResponse>;
+export declare function refreshAccessToken(refreshToken: string, clientId: string): Promise<OAuth2TokenResponse>;
+export declare function revokeToken(token: string): Promise<void>;
+export declare function storePKCEParams(params: PKCEParams): void;
+export declare function retrievePKCEParams(): PKCEParams | null;
+export declare function clearPKCEParams(): void;
+export declare function storeAuthTokens(accessToken: string, expiresIn: number, userEmail?: string): void;
+export declare function getStoredAccessToken(): string | null;
+export declare function isTokenExpired(bufferSeconds?: number): boolean;
+export declare function getStoredUserEmail(): string | null;
+export declare function clearAuthTokens(): void;
+export declare function parseCallbackUrl(url: string): {
+    code?: string;
+    state?: string;
+    error?: string;
+    error_description?: string;
+};
+export declare function validateState(receivedState: string, storedState: string): boolean;
